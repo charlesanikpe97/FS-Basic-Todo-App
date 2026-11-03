@@ -13,8 +13,9 @@ const errorMessageDivEl = document.querySelector('#error-message');
 
 // Adding the "Get started by adding a task you're yet to accomplish"
 
-// if (todoListEl.childElementCount === 0){
-
-// }
-
-console.log(todoListEl.childElementCount);
+if (todoListEl.childElementCount === 0){
+    const emptyTaskDivEl = document.createElement('div');
+    emptyTaskDivEl.setAttribute('id', 'emptyTask');
+    emptyTaskDivEl.textContent = "Get started by adding a task you're yet to accomplish";
+    todoListEl.appendChild(emptyTaskDivEl);
+}

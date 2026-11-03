@@ -274,3 +274,19 @@ footer {
         gap: 5px;
     }
 }
+
+/* 
+Dynamic JS elements  */
+
+#emptyTask {
+    height: 20%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: transparent;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
