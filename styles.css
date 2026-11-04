@@ -216,6 +216,8 @@ main {
     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
     color: #ffffff;
     box-shadow: 0 4px 12px #ef44444d;
+    text-align: center;
+    width: fit-content;
 }
 
 .delete-btn:hover {
@@ -290,3 +292,33 @@ Dynamic JS elements  */
     margin-left: auto;
     margin-right: auto;
 }
+
+/* .todo-div {
+    width: 90%;
+    height: 3rem;
+    background-color: white;
+    border:transparent;
+    border-radius: 10px;
+    align-content: center;   
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.todo-div-left {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+/* .todo-div-right {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+    
+} */
