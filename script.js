@@ -22,6 +22,12 @@ if (todoListEl.childElementCount === 0){
     todoListEl.appendChild(emptyTaskDivEl);
 } 
 
+// Saving the added Todos in POJOs
+
+const todos = [
+
+];
+
 
 // Adding a todo 
 
@@ -48,6 +54,13 @@ buttonEl.addEventListener('click', (e)=> {
 
         const todoTitleEl = document.createElement('span');
         todoTitleEl.textContent = inputEl.value;
+        const todoObj = {
+            id: Date.now().toString(),
+            text: todoTitleEl.textContent,
+            completed: false,
+            createdAt: Date.now()
+        }
+        todos.push(todoObj);
         todoTitleEl.classList.add('todo-text');
         toDoDivEl.appendChild(todoTitleEl);
 
@@ -67,8 +80,16 @@ buttonEl.addEventListener('click', (e)=> {
 
 
         inputEl.value = "";
+
+        if (todos.length > 0){
+            todoListEl.firstElementChild.style.display = 'none';
+        } 
     }
 });
+
+
+console.log(todos);
+
 
 
 // Checkmark is active
@@ -77,6 +98,11 @@ todoListEl.addEventListener('change', (e) => {
     console.log(e);
     if (e.target.checked){
         e.target.parentElement.classList.add('completed');
+        for (let todo of todos){
+            if (todo.text === e.target.nextSibling.textContent){
+                todo.completed = true;
+            }
+        }
     } else {
         e.target.parentElement.classList.remove('completed');
     }
@@ -88,10 +114,19 @@ todoListEl.addEventListener('change', (e) => {
 todoListEl.addEventListener('click', (e) => {
     
     if (e.target.className === 'delete-btn'){
-        console.log("This worked.");
+        for (let i=0; i<todos.length; i++){
+            if (todos[i].text === e.target.parentElement.previousElementSibling.textContent){
+                todos.splice(i,1);
+            }
+        }
+
+        console.log(todos);
+
         e.target.parentElement.parentElement.remove();
     }
-})
+});
 
 
-// 
+
+
+
