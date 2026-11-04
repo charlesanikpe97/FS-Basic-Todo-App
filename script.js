@@ -68,4 +68,15 @@ buttonEl.addEventListener('click', (e)=> {
 
         inputEl.value = "";
     }
+});
+
+
+// Checkmark is active
+
+todoListEl.addEventListener('change', (e) => {
+    console.log(e);
+    if (e.target.checked){
+        e.target.parentElement.classList.add('completed');
+        
+    }
 })
