@@ -77,6 +77,16 @@ todoListEl.addEventListener('change', (e) => {
     console.log(e);
     if (e.target.checked){
         e.target.parentElement.classList.add('completed');
-        
+    }
+})
+
+
+// Delete functionality 
+
+todoListEl.addEventListener('click', (e) => {
+    
+    if (e.target.className === 'delete-btn'){
+        console.log("This worked.");
+        e.target.parentElement.parentElement.remove();
     }
 })
