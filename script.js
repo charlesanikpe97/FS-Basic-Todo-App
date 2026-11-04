@@ -77,6 +77,8 @@ todoListEl.addEventListener('change', (e) => {
     console.log(e);
     if (e.target.checked){
         e.target.parentElement.classList.add('completed');
+    } else {
+        e.target.parentElement.classList.remove('completed');
     }
 })
 
@@ -90,3 +92,6 @@ todoListEl.addEventListener('click', (e) => {
         e.target.parentElement.parentElement.remove();
     }
 })
+
+
+// 
